@@ -51,7 +51,7 @@ jobs:
 
   publish-npm:
     name: Publish to NPM
-    needs: build
+    needs: ci
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
