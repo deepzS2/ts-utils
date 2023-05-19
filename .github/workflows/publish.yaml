@@ -88,12 +88,7 @@ jobs:
       - name: Build packages
         run: pnpm build
 
-      - name: "Setup npm"
-        run: |
-          pnpm config set @deepz01:registry=https://registry.npmjs.org/deepz01
-          pnpm config set "//registry.npmjs.org//:_authToken=${{ secrets.NODE_AUTH_TOKEN }}"
-
       - name: Publish Packages
         run: pnpm publish-ci
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
