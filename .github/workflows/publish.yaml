@@ -54,9 +54,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Build packages
-        run: pnpm build
-
       - name: Create Release Pull Request
         uses: changesets/action@master
         with:
@@ -87,6 +84,9 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm install
+
+      - name: Build packages
+        run: pnpm build
 
       - name: Publish Packages
         run: pnpm publish-ci
