@@ -81,7 +81,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://registry.npmjs.org/
           cache: "pnpm"
-          scope: "@deepz01"
+          scope: "@deepzs"
 
       - name: Install Dependencies
         run: pnpm install
