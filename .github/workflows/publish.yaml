@@ -18,7 +18,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "$NODE_VERSION"
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install
@@ -36,7 +37,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "$NODE_VERSION"
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install
@@ -60,8 +62,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "$NODE_VERSION"
+          node-version: ${{ env.NODE_VERSION }}
           registry-url: https://registry.npmjs.org/
+          cache: "pnpm"
 
       - name: Install Dependencies
         run: pnpm install
