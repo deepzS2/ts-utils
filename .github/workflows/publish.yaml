@@ -90,6 +90,6 @@ jobs:
         run: pnpm build
 
       - name: Publish Packages
-        run: pnpm -r publish --access public
+        run: pnpm -r publish packages --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
