@@ -7,6 +7,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "lerna run build",
     "rust": "pnpm --filter @utilz/rust",
