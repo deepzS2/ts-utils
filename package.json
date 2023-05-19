@@ -16,7 +16,7 @@
     "test:coverage": "vitest --coverage",
     "lint": "eslint --cache packages --ext .js,.ts,.mjs",
     "lint:fix": "eslint --cache packages --ext .js,.ts,.mjs --fix",
-    "publish-ci": "lerna publish from-package -y --no-verify-access"
+    "publish-ci": "lerna publish from-package -y --no-verify-access --no-private"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
