@@ -88,6 +88,11 @@ jobs:
       - name: Build packages
         run: pnpm build
 
+      - name: "Setup npm"
+        run: |
+          pnpm config set @xcanchal:registry=https://npm.pkg.github.com/xcanchal
+          pnpm config set "//registry.npmjs.org//:_authToken=${{ secrets.NODE_AUTH_TOKEN }}"
+
       - name: Publish Packages
         run: pnpm publish-ci
         env:
