@@ -7,7 +7,7 @@ on:
 
 env:
   NODE_VERSION: latest
-  PNPM_VERSION: 7.27.1
+  PNPM_VERSION: 8.5.1
 
 jobs:
   ci:
