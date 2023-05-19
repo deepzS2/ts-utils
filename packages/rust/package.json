@@ -1,0 +1,13 @@
+{
+  "name": "@utilz/rust",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "author": "deepzS2 <alanr.developer@hotmail.com>",
+  "license": "ISC",
+  "files": [
+    "lib/index.js"
+  ],
+  "scripts": {
+    "build": "tsup"
+  }
+}
