@@ -4,7 +4,6 @@
   "description": "Utilities packages for some TypeScript projects.",
   "author": "deepzS2",
   "license": "ISC",
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
