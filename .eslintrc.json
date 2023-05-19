@@ -1,0 +1,34 @@
+{
+  "extends": "standard-with-typescript",
+  "plugins": ["eslint-plugin-import-helpers"],
+  "parserOptions": {
+    "project": ["./tsconfig.json", "packages/*/tsconfig.json"]
+  },
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+
+    // Import and import helpers
+    "import/prefer-default-export": "off",
+    "import/no-duplicates": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always", // new line between groups
+        "groups": [
+          "module",
+          "/^@server/shared/",
+          "/^@/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  }
+}

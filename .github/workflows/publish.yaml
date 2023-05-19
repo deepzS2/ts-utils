@@ -1,0 +1,72 @@
+name: Publish Packages
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  NODE_VERSION: latest
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: $NODE_VERSION
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run tests
+        run: pnpm test
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: $NODE_VERSION
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Create Release Pull Request
+        uses: changesets/action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-npm:
+    name: Publish to NPM
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: $NODE_VERSION
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Publish Packages
+        run: pnpm publish-ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
