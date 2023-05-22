@@ -1,6 +1,6 @@
 {
   "name": "@deepzs/trustscript",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "lib/index.js",
   "author": "deepzS2 <alanr.developer@hotmail.com>",
   "license": "ISC",
