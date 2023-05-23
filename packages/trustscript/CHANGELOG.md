@@ -1,5 +1,11 @@
 # @deepzs/trustscript
 
+## 1.0.4
+
+### Patch Changes
+
+- 5460349: Adding files reference to package.json for npm
+
 ## 1.0.3
 
 ### Patch Changes
