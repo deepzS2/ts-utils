@@ -2,10 +2,12 @@
   "name": "@deepzs/trustscript",
   "version": "1.0.3",
   "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
   "author": "deepzS2 <alanr.developer@hotmail.com>",
   "license": "ISC",
   "files": [
-    "lib/index.js"
+    "lib"
   ],
   "scripts": {
     "build": "tsup"
